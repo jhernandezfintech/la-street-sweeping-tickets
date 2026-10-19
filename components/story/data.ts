@@ -3,15 +3,17 @@ export type BlockRow = { block: string; tickets: number }
 
 export const hero = {
   tickets: '131,197',
+  ticketsNote: 'July to September 2026',
   fines: '$9,577,381',
   finesNote: 'Every ticket is $73',
   peakDay: 'Thursday',
+  peakDayNote: '31,594 tickets',
   peakHour: '8 AM',
+  peakHourNote: '38,652 tickets',
 }
 
 export const koreatown = {
-  caption:
-    'Koreatown is defined as latitude 34.0525 to 34.0690 and longitude negative 118.3095 to negative 118.2915, roughly Western to Vermont, Olympic to 3rd Street.',
+  caption: 'Koreatown here means roughly Western to Vermont, Olympic to 3rd Street.',
   tickets: '1,862',
   fines: '$135,926',
   share: '1.42%',
@@ -67,7 +69,10 @@ export const citywide = {
     { label: '1 PM', value: 7028 },
     { label: '2 PM', value: 519 },
     { label: '3 PM', value: 2 },
+    { label: '4 PM', value: 0 },
     { label: '5 PM', value: 1 },
+    { label: '6 PM', value: 0 },
+    { label: '7 PM', value: 0 },
     { label: '8 PM', value: 1 },
   ] satisfies Datum[],
   region: [
@@ -98,6 +103,8 @@ export const topBlocks = [
 ] satisfies BlockRow[]
 
 export const method = {
+  koreatownBounds:
+    'Koreatown was defined by coordinates: latitude 34.0525 to 34.0690 North, longitude 118.2915 to 118.3095 West.',
   summary:
     'I pulled 131,197 street sweeping citations (violation code 80.69BS) from the City of Los Angeles Open Data Parking Citations dataset. I cleaned issue times stored as text and standardized street suffixes and region names in ChatGPT. Then I checked quality and tied every chart back to the city\u2019s own totals before publishing.',
   checks: [

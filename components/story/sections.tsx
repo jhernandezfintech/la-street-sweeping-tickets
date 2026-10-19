@@ -16,10 +16,10 @@ export function Hero() {
       <p className="mt-6 text-sm font-medium text-ink">By Julio Hernandez</p>
 
       <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        <StatCard label="Total tickets" value={hero.tickets} />
+        <StatCard label="Total tickets" value={hero.tickets} note={hero.ticketsNote} />
         <StatCard label="Fines issued" value={hero.fines} note={hero.finesNote} />
-        <StatCard label="Peak day" value={hero.peakDay} />
-        <StatCard label="Peak hour" value={hero.peakHour} />
+        <StatCard label="Peak day" value={hero.peakDay} note={hero.peakDayNote} />
+        <StatCard label="Peak hour" value={hero.peakHour} note={hero.peakHourNote} />
       </div>
     </header>
   )
@@ -84,7 +84,7 @@ export function CitywidePatterns() {
     <Section
       id="citywide"
       eyebrow="Citywide patterns"
-      title="The week, the clock, and the map"
+      title="The week, the clock, and the region"
       intro="Hover over any bar to see the exact count."
     >
       <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
@@ -184,6 +184,9 @@ export function HowIBuiltIt() {
     <Section id="method" eyebrow="Method" title="How I built it">
       <Card>
         <p className="max-w-3xl text-lg leading-relaxed text-ink/80">{method.summary}</p>
+        <p className="mt-4 max-w-3xl text-lg leading-relaxed text-ink/80">
+          {method.koreatownBounds}
+        </p>
         <dl className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3">
           {method.checks.map((check) => (
             <div key={check.label} className="rounded-2xl bg-[#F1F2EE] p-5">
